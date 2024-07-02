@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Tealfeed Code Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple no-frills code editor with syntax highlighting.
 
-## Available Scripts
+## Screenshot
+![tealfeed_code_editor](https://github.com/DhruvDua1105/Tealfeed_code_editor/assets/86777191/678ccaf4-0aa9-45cb-8b17-0bfca9180b1a)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Syntax Highlighting:** Highlight code with custom styles.
+- **Undo/Redo:** Easily undo and redo changes.
+- **Tab Indentation:** Support for tabs and spaces.
+- **Customizable:** Highly customizable with various props.
+- **Cross-browser Compatibility:** Works on modern browsers.
+- **Dark Themes Supported:** Variety of dark themes are available to choose from.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage of Prismjs
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Prismjs works by overlaying a syntax-highlighted `<pre>` block over a `<textarea>`. When you type, select, copy text, etc., you interact with the underlying `<textarea>`, so the experience feels native. This approach is much simpler compared to other editors that re-implement the behavior.
 
-### `npm test`
+The syntax highlighting can be done by any third-party library as long as it returns HTML and is fully controllable by the user.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The vanilla `<textarea>` doesn't support inserting tab characters for indentation, so we re-implement it by listening to `keydown` events and programmatically updating the text. One caveat with programmatically updating the text is that we lose the undo stack, so we need to maintain our own undo stack. As a result, we can also implement improved undo behavior such as undoing whole words, similar to editors like VSCode.
 
-### `npm run build`
+## Installation and Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow these steps to set up the project on your local machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    git clone https://github.com/DhruvDua1105/Tealfeed_code_editor.git
+    cd Tealfeed_code_editor
+    ```
 
-### `npm run eject`
+2. **Install project dependencies:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    npm start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This will start the development server on `http://localhost:3000`.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
