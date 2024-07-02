@@ -1,0 +1,98 @@
+
+.editor-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.editor-wrapper {
+  position: relative;
+}
+
+.code-input,
+.code-output {
+  width: 100%;
+  height: 400px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  border: none;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  resize: none;
+  overflow: auto;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.code-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 1;
+  caret-color: #ffffff;
+}
+
+.code-output {
+  pointer-events: none;
+  white-space: pre-wrap; /* Allow for word wrapping */
+  word-break: break-word;
+  z-index: 0;
+}
+
+.editor-container.dark .code-output,
+.editor-container.dark .code-input {
+  background: #2d2d2d;
+  color: #ccc;
+}
+
+.editor-container.funky .code-output,
+.editor-container.funky .code-input {
+  background: #011627;
+  color: #fff;
+}
+
+.editor-container.okaidia .code-output,
+.editor-container.okaidia .code-input {
+  background: #272822;
+  color: #f8f8f2;
+}
+
+
+.editor-container.twilight .code-output,
+.editor-container.twilight .code-input {
+  background: #141414;
+  color: #f8f8f8;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 40px;
+}
+
+.sub-text {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.label {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 0;
+}
